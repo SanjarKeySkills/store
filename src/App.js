@@ -20,6 +20,7 @@ const App = () => {
 
     return (
         <div className={`app ${theme}`}>
+            <h2>Test</h2>
             <Routes>
                 <Route element={<MainPageLayout />}>
                     <Route path="/" element={<MainPage />} />
