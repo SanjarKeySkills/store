@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
+import Input from "../UI/Input/Input"
+import { useContext } from "react";
+import { ProductContext } from "../../context/Store/Product/ProductContext";
 
 const pages = [
 	{
@@ -24,8 +27,7 @@ const pages = [
 		href: '/profile'
   }
 ];
-	
-	
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -46,6 +48,15 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+const {
+  getProducts
+} = useContext(ProductContext)
+// from useContext обьект передает продуктс
+
+const handleSearch = (searchText) => {
+  getProducts(searchText)
+}
 
   return (
     <AppBar position="static">
@@ -137,6 +148,10 @@ function ResponsiveAppBar() {
 				</Link>
               </Button>
             ))}
+          </Box>
+
+		  <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+				<Input 	handler={handleSearch}/>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

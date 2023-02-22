@@ -7,9 +7,22 @@ body {
 }
 
 .app.dark {
-	background: #10105d;
+	background: #5f5fbb;
 }
 
 .app.light {
-	background: #be9898;
+	background: #4793d2;
+}
+
+input {
+	outline: none;
+	background: none;
+	border: none; 
+}
+
+input:focus,
+input:hover {
+	outline: none;
+	background: none;
+	border: none;
 }

@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./context/Theme/ThemeProvider";
 
 import App from "./App";
+import ProductProvider from "./context/Store/Product/ProductProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
         <ThemeProvider>
-            <App />
+            <ProductProvider>
+                <App />
+            </ProductProvider>
         </ThemeProvider>
     </BrowserRouter>
 );
